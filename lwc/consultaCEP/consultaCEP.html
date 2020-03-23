@@ -1,0 +1,58 @@
+<template>
+  <lightning-card
+    variant="Narrow"
+    title="Consulta de CEP"
+    icon-name="action:map"
+  >
+    <template if:false={loaded}>
+      <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    <div class="slds-p-left_small slds-p-right_small">
+      <lightning-input
+        label="CEP"
+        name="cep"
+        value={cep}
+        type="text"
+        id="cep"
+        max-length="9"
+        onchange={handleChangeCEP}
+        onblur={handleBlurCEP}
+      ></lightning-input>
+
+      <lightning-input
+        label="Rua"
+        name="rua"
+        value={rua}
+        type="text"
+        id="rua"
+      ></lightning-input>
+
+      <lightning-input
+        label="Bairro"
+        name="bairro"
+        value={bairro}
+        type="text"
+        id="bairro"
+      ></lightning-input>
+
+      <lightning-input
+        label="Cidade"
+        name="cidade"
+        value={cidade}
+        type="text"
+        id="cidade"
+      ></lightning-input>
+
+      <lightning-input
+        label="Estado"
+        name="uf"
+        value={uf}
+        type="text"
+        id="uf"
+      ></lightning-input>
+    </div>
+    <div slot="footer">
+      <lightning-button label="Salvar"></lightning-button>
+    </div>
+  </lightning-card>
+</template>
